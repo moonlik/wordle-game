@@ -60,13 +60,13 @@ let isGameOver = false;
 
 guessRows.forEach((guessRow, guessRowIndex) => {
   const rowElement = document.createElement('div');
-  rowElement.setAttribute('id', 'guessRow-' + guessRowIndex);
+  rowElement.setAttribute('id', `guessRow-${guessRowInde}`);
 
-  guessRow.forEach((guess, guessIndex) => {
+  guessRow.forEach((_, guessIndex) => {
     const tileElement = document.createElement('div');
     tileElement.setAttribute(
       'id',
-      'guessRow-' + guessRowIndex + '-tile-' + guessIndex
+      `guessRow-${guessRowIndex}-tile-${guessIndex}`
     );
     tileElement.classList.add('tile');
     rowElement.append(tileElement);
@@ -98,7 +98,7 @@ const handleClick = (key) => {
 const addLetter = (letter) => {
   if (currentRow < 6 && currentTile < 5) {
     const tile = document.getElementById(
-      'guessRow-' + currentRow + '-tile-' + currentTile
+      `guessRow-${currentRow}-tile-${currentTile}`
     );
     tile.textContent = letter;
     guessRows[currentRow][currentTile] = letter;
@@ -111,7 +111,7 @@ const deleteLetter = () => {
   if (currentTile > 0) {
     currentTile--;
     const tile = document.getElementById(
-      'guessRow-' + currentRow + '-tile-' + currentTile
+      `guessRow-${currentRow}-tile-${currentTile}`
     );
     tile.textContent = '';
     guessRows[currentRow][currentTile] = '';
