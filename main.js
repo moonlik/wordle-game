@@ -60,7 +60,7 @@ let isGameOver = false;
 
 guessRows.forEach((guessRow, guessRowIndex) => {
   const rowElement = document.createElement('div');
-  rowElement.setAttribute('id', `guessRow-${guessRowInde}`);
+  rowElement.setAttribute('id', `guessRow-${guessRowIndex}`);
 
   guessRow.forEach((_, guessIndex) => {
     const tileElement = document.createElement('div');
